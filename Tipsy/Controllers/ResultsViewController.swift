@@ -9,22 +9,25 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    var totalRecieve: String?
+    var peopleReceive: Int?
+    var tipReceive: Int?
+    
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var settingsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        totalLabel.text = totalRecieve
+        settingsLabel.text = ("Split between \(peopleReceive ?? 0) people, with \(tipReceive ?? 0)% tip")
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func Recalulate(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
-    */
-
+    
+    
+   
 }
